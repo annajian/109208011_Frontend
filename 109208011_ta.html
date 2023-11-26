@@ -1,0 +1,87 @@
+<!-- Requirement for HW
+1. Change the background pic from the Internet picture and allow the photo to resize with the frame
+2. Change the font color, size, and letter spacing for Intro to CS
+3. Add an underline under Intro to CS
+4. Let the words place in the horizontal and vertical center 
+5. Change the A practice for the Bootstrap in November 24th into your Student ID, Department, and name -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>1124TA_HW</title>
+    <style type="text/css">
+        .kv {
+            width: 100%;
+            max-width: 100%; /* Make the image responsive */
+            height: auto ;
+            display: block; /* Remove extra space below inline images */
+            margin: 0 auto; /* Center the image horizontally within its container */
+
+        }
+
+
+        .kv .container {
+            margin: 0 auto; /* Center the container horizontally */
+        }
+
+        .kv .text {
+            text-align: center;
+            /* position: absolute; */
+            /* display: flex; */
+            /* align-items: center; */
+            /* justify-content: center; */
+            /* height: 100vh; */
+            /* margin: 0; */
+            position: absolute; /* or absolute */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+    
+         
+            /* Horizontal and vertical center should be added here */
+        }
+
+        .kv .text h1 {
+            color:lightgray;
+            font-weight: bold;
+            font-family:Arial, Helvetica, sans-serif;
+            font-size: 100px;
+            text-decoration: underline;
+            letter-spacing: 2px;
+        }
+
+        .kv .text p {
+            color: yellow;
+            font-size:20px;
+        }
+
+        img {
+            pointer-events: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+
+    </style>
+</head>
+<body>
+   <div class="kv">
+    <img src="piermanuele-sberni-dz1Yj-F1PG8-unsplash.jpg" />
+    <div class="container">
+        <div class="row justify-content-center d-flex align-items-center">
+            <div class="col">
+                <div class="text">
+                    <h1>Intro to CS</h1>
+                    <p>109208011 econ 簡子芸</p>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+</body>
+</html>
