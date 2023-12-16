@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+             body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.3s ease; /* 背景顏色過渡效果 */
+        }
+        </style>
+        
+    </head>
+    <body>
+        <button onclick="showInput(1)">Show first input</button>
+        <button onclick="showInput(2)">Show second input</button>
+
+
+        <script>
+            
+            var num1;
+            num1=window.prompt('please input number 1')
+            num1 = parseInt(num1)
+            var num2
+            num2=window.prompt('please input number 2')
+            num2 = parseInt(num2)
+            
+            function changeBackground(color) {
+        document.body.style.backgroundColor = color;
+    }
+    
+
+        function showInput(num){
+            if (num == 1){
+                document.write (num1)
+            }else{
+                document.write (num2)
+            }
+
+        }
+            
+           
+            if (num1 > num2){
+                changeBackground("red")
+                document.write("firstInput > secondInput")
+             
+            }   else if (num1 < num2){
+                changeBackground("orange")
+                document.write("firstInput < secondInput")
+            } else {
+                changeBackground("lightyellow")
+                document.write("firstInput==secondInput")
+            }
+    
+            
+         </script>
+    </body>
+</html>
