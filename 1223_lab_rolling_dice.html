@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Rolling Simulator</title>
+</head>
+<body>
+
+<h1>Welcome to the Dice Rolling Simulator!</h1>
+
+<button onclick="rollDice()">Roll 12 Dice</button>
+
+<div id="diceImages"></div>
+<table id="probabilities">
+    <tr>
+        <th>Result</th>
+        <th>Frequency</th>
+        <th>Probability (%)</th>
+    </tr>
+</table>
+
+<script>
+    function rollDice() {
+        const diceImagesElement = document.getElementById('diceImages');
+        const resultElement = document.getElementById('probabilities');
+
+        diceImagesElement.innerHTML = '';
+        resultElement.innerHTML = '<tr><th>Result</th><th>Frequency</th><th>Probability (%)</th></tr>';
+
+        const frequencies = Array(6).fill(0);
+
+        for (let i = 0; i < 12; i++) {
+            const result = Math.floor(Math.random() * 6) + 1;
+            frequencies[result - 1]++;
+
+            // Replace the placeholder link with the URL of the image you want to use for each result
+            const imageLink = `./dice/die${result}.png`;
+
+            diceImagesElement.innerHTML += `<img src="${imageLink}" alt="Dice ${result}"> `;
+        }
+
+        let totalRolls = 0;
+
+        for (let i = 0; i < 6; i++) {
+            const frequency = frequencies[i];
+            totalRolls += frequency;
+
+            const probability = (frequency / 12) * 100;
+
+            resultElement.innerHTML += `<tr><td>${i + 1}</td><td>${frequency}</td><td>${probability.toFixed(2)}</td></tr>`;
+        }
+
+        // Add a row for the total number of rolls
+        resultElement.innerHTML += `<tr><td>Total</td><td>${totalRolls}</td><td>100%</td></tr>`;
+    }
+</script>
+
+</body>
+</html>
+
